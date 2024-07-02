@@ -4,8 +4,5 @@ locals {
     "3.140.118.214",
   ]
 
-  dns_zone_transfer_with_mask = [
-    "52.14.213.208/32",
-    "3.140.118.214/32",
-  ]
+  dns_zone_transfer_with_mask = [for ip in local.dns_zone_transfer : "${ip}/32"]
 }

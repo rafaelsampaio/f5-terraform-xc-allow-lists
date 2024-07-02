@@ -6,8 +6,8 @@ This is a module to make it easier to create allow lists for F5 Distributed Clou
 
 ## References
 
-[Firewall or Proxy Reference for Network Cloud](https://docs.cloud.f5.com/docs/reference/network-cloud-ref)
-[Flat file for automation purposes](https://docs.cloud.f5.com/docs/93c585ade9c22ae0060822d112a934fc/ips-domains.txt)
+- [Firewall or Proxy Reference for Network Cloud](https://docs.cloud.f5.com/docs/reference/network-cloud-ref)
+- [Flat file for automation purposes](https://docs.cloud.f5.com/docs/93c585ade9c22ae0060822d112a934fc/ips-domains.txt)
 
 ---
 
@@ -43,5 +43,5 @@ None
 | container_registries         | Allow the IP address ranges specified to enable access to the various container registries                          |
 | domains_http                 | Add the domains specified to your allowlist to enable firewall or proxy to allow connections from or to the domains |
 | domains_dns                  | Add the domains specified to your allowlist to enable firewall or proxy to allow connections from or to the domains |
-| all_ranges                   |                                                                                                                     |
-| all_ports                    |                                                                                                                     |
+| all_ranges                   | All but container registries                                                                                        |
+| all_ports                    | All TCP and UDP ports                                                                                               |

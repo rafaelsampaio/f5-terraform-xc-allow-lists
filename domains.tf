@@ -17,9 +17,11 @@ locals {
     "quay.io",
     "api.bcti.brightcloud.com",
   ]
+
   domains_dns = [
     "traffic-router-0.cdn-gc.ves.volterr",
     "traffic-router-1.cdn-gc.ves.volterr",
     "cdn.ves.volterra.io",
   ]
+
 }
