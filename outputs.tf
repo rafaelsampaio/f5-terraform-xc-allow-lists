@@ -65,7 +65,7 @@ output "range_ipv4_udp_ports" {
 
 output "all_ranges" {
   description = "All IP ranges with mask"
-  value       = distinct(concat(local.dns_zone_transfer_with_mask, local.dnslb_health_check_with_mask, local.global_log_receivers, local.range_ipv4_tcp, local.range_ipv4_udp))
+  value       = distinct(concat(local.web_app_scanning_with_mask, local.dnslb_health_check_with_mask, local.global_log_receivers, local.range_ipv4_tcp, local.range_ipv4_udp))
 }
 
 output "all_ports" {
