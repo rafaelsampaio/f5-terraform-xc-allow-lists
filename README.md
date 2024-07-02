@@ -18,6 +18,29 @@ module "xc_allow_lists" {
   source = "github.com/rafaelsampaio/f5-terraform-xc-allow-lists"
 }
 
+resource "azurerm_network_security_group" "xc" {
+  name                = "allow-xc"
+  location            = var.location
+  resource_group_name = var.rg
+  tags                = var.labels
+
+  dynamic "security_rule" {
+    for_each = { for port in var.ports : port => port }
+    content {
+      name                       = "xc-tcp-${security_rule.value}"
+      priority                   = security_rule.key + 101
+      direction                  = "Inbound"
+      access                     = "Allow"
+      protocol                   = "Tcp"
+      destination_port_range     = security_rule.value
+      source_address_prefixes    = module.xc_allow_lists.all_ranges
+      source_port_range          = "*"
+      destination_address_prefix = data.azurerm_subnet.external.address_prefixes[0]
+    }
+  }
+}
+
+
 
 ```
 
