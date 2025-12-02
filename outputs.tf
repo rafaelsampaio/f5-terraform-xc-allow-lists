@@ -35,7 +35,7 @@ output "domains_dns" {
 
 output "domains" {
   description = ""
-  value       = concat(local.domains_http, local.domains_dns, local.domains_bd, localc.domains_smsv2)
+  value       = concat(local.domains_http, local.domains_dns, local.domains_bd, local.domains_smsv2)
 }
 
 output "global_log_receivers" {
